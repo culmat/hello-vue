@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello</title>
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+<link type="text/css" rel="stylesheet" href="app.css"/>
+</head>
+<body>
+<div id="app">
+		
+				<b-navbar toggleable="md" type="dark" variant="info">
+
+				  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+				
+				  <b-navbar-brand href="#" v-on:click="navigate('home')">
+				  <img src="icons/favicon-32x32.png" class="d-inline-block align-top" alt="Icon"> Hello Vue</b-navbar-brand>
+				
+				  <b-collapse is-nav id="nav_collapse">
+				
+				    <b-navbar-nav>
+				      <b-nav-item href="#"  v-on:click="navigate('about')">About</b-nav-item>
+				    </b-navbar-nav>
+				
+				  </b-collapse>
+				</b-navbar>
+
+		
+		<b-alert show v-if="nav.home">Hello Vue World</b-alert>
+		<b-alert show variant="success" v-if="nav.about">About</b-alert>
+		
+
+		</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+<!-- 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+ -->
+<script src="app.js"></script>
+</body>
+</html>
