@@ -20,5 +20,7 @@ onload = function() {
 	if(location.hash && location.hash != "#home") app.navigate(location.hash, false);
 };
 
-
+onpopstate = function(event) {
+	app.navigate(event.state.target); 
+};
 
