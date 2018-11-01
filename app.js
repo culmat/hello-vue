@@ -11,6 +11,8 @@ var app = new Vue({
 			for ( var property in this.nav) {
 				this.nav[property] = (property == target);
 			}
+			var navHandler = "onNavigate"+ target.charAt(0).toUpperCase() + target.slice(1);
+			if(this[navHandler]) this[navHandler]();
 		}
 	}
 });
@@ -21,6 +23,6 @@ onload = function() {
 };
 
 onpopstate = function(event) {
-	app.navigate(event.state.target); 
+	app.navigate(event.state.target, false); 
 };
 
